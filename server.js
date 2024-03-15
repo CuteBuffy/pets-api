@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors())
 
-app.get('/pets/pets', async (req, res) => {
+app.get('/pets', async (req, res) => {
     try {
         const response = await fetch('https://biggamesapi.io/api/collection/Pets');
         const data = await response.json();
@@ -17,7 +17,7 @@ app.get('/pets/pets', async (req, res) => {
     }
 });
 
-app.get('/pets/rap', async (req, res) => {
+app.get('/rap', async (req, res) => {
     try {
         const response = await fetch('https://biggamesapi.io/api/rap');
         const data = await response.json();

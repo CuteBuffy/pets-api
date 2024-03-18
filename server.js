@@ -39,6 +39,17 @@ app.get('/exists', async (req, res) => {
     }
 });
 
+app.get('/enchants', async (req, res) => {
+    try {
+        const response = await fetch('https://biggamesapi.io/api/collection/Enchants');
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Error fetching data' });
+    }
+});
+
 app.listen(process.env.PORT || 5000, () => {
     console.log(`Server is running on port 5000`);
 });

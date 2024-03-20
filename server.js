@@ -4,7 +4,7 @@ import express from 'express';
 
 const app = express();
 
-app.use(cors({ origin: ["https://cutebuffy.github.io/search-pets/", "http://localhost:5173/search-pets/"], credentials: true }))
+app.use(cors())
 
 app.get('/pets', async (req, res) => {
     try {
